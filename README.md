@@ -1,4 +1,4 @@
-# TRACES
+# LINKED-LIST
 Linked list library in C language for embedded software.
 
 
