@@ -182,4 +182,4 @@ Implement the functions `LINKED_LIST_GetSize`, `LINKED_LIST_FindHead`, and `LINK
 
 ## License
 
-**TRACES** is licensed under the **MIT license**. See [LICENSE](LICENSE) for further information.
+**LINKED-LIST** is licensed under the **MIT license**. See [LICENSE](LICENSE) for further information.
