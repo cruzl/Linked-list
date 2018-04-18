@@ -1,13 +1,9 @@
-#include "linked_list.h"
+#include "src/linked_list.h"
 
-typedef struct {
-    int x;
-} SOME_STRUCT_t;
+typedef struct {} SOME_STRUCT_t;
 
 typedef enum {
-    ENUM_1 ,
-    ENUM_2 ,
-    ENUM_3
+    ELEMENT_1
 } SOME_ENUM_t;
 
 static LIST_t * list = NULL;
@@ -24,13 +20,13 @@ main ( void )
     static unsigned int  y;
     static SOME_ENUM_t   z;
 
-    printf( "\r\nAdding the fist element to the list\r\n" );
+    printf( "\r\nAdding the variable 'x' to the list\r\n" );
     LINKED_LIST_AddNode( list , ( void * )&x );
 
     printf( "\r\nDisplaying the list\r\n" );
     LINKED_LIST_DisplayList( list );
 
-    printf( "\r\nAdding the second element to the list\r\n" );
+    printf( "\r\nAdding the variable 'y' to the list\r\n" );
     LINKED_LIST_AddNode( list , ( void * )&y );
 
     printf( "\r\nDisplaying the list\r\n" );
@@ -42,7 +38,7 @@ main ( void )
     printf( "\r\nDisplaying the list\r\n" );
     LINKED_LIST_DisplayList( list );
 
-    printf( "\r\nAdding the third element to the list\r\n" );
+    printf( "\r\nAdding the variable 'z' to the list\r\n" );
     LINKED_LIST_AddNode( list , ( void * )&z );
 
     printf( "\r\nIterating the list\r\n" );
