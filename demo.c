@@ -1,6 +1,8 @@
 #include "src/linked_list.h"
 
-typedef struct {} SOME_STRUCT_t;
+typedef struct {
+    int a;
+} SOME_STRUCT_t;
 
 typedef enum {
     ELEMENT_1

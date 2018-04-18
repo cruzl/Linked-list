@@ -29,7 +29,9 @@ Example program [demo.c](demo.c):
 ```c
 #include "src/linked_list.h"
 
-typedef struct {} SOME_STRUCT_t;
+typedef struct {
+    int a;
+} SOME_STRUCT_t;
 
 typedef enum {
     ELEMENT_1
@@ -101,65 +103,73 @@ foo@bar:~$ ./demo
 Result:
 ```
 Creating the list
-src/linked_list.c:68:LINKED_LIST_CreateEmptyList()    List allocated successfully @ 0x00D32930
+src/linked_list.c:68:LINKED_LIST_CreateEmptyList()    List allocated successfully @ 0x00782930
 
 Adding the variable 'x' to the list
-src/linked_list.c:315:linked_list_FindNode()    Searching the node whose data = 0x00408024 in list @ 0x00D32930
+src/linked_list.c:315:linked_list_FindNode()    Searching the node whose data = 0x00408024 in list @ 0x00782930
 src/linked_list.c:331:linked_list_FindNode()    Node not found
 src/linked_list.c:292:linked_list_CreateNode()    Allocating node, data = 0x00408024
-src/linked_list.c:306:linked_list_CreateNode()    Node allocated successfully @ 0x00D32940
+src/linked_list.c:306:linked_list_CreateNode()    Node allocated successfully @ 0x00782940
 src/linked_list.c:99:LINKED_LIST_AddNode()    Node added @ list head
 
 Displaying the list
-src/linked_list.c:193:LINKED_LIST_DisplayList()    Displaying list @ 0x00D32930
-src/linked_list.c:204:LINKED_LIST_DisplayList()      - Node = 0x00D32940 , data = 0x00408024
+src/linked_list.c:193:LINKED_LIST_DisplayList()    Displaying list @ 0x00782930
+src/linked_list.c:204:LINKED_LIST_DisplayList()      - Node = 0x00782940 , data = 0x00408024
 src/linked_list.c:205:LINKED_LIST_DisplayList()    End of list
 
 Adding the variable 'y' to the list
-src/linked_list.c:315:linked_list_FindNode()    Searching the node whose data = 0x00408024 in list @ 0x00D32930
-src/linked_list.c:323:linked_list_FindNode()    Node found @ 0x00D32940
-src/linked_list.c:86:LINKED_LIST_AddNode()    ERROR: The node whose data = 0x00408024 has already been added
+src/linked_list.c:315:linked_list_FindNode()    Searching the node whose data = 0x00408028 in list @ 0x00782930
+src/linked_list.c:331:linked_list_FindNode()    Node not found
+src/linked_list.c:292:linked_list_CreateNode()    Allocating node, data = 0x00408028
+src/linked_list.c:306:linked_list_CreateNode()    Node allocated successfully @ 0x00782950
+src/linked_list.c:112:LINKED_LIST_AddNode()    Node added @ the end of the list
 
 Displaying the list
-src/linked_list.c:193:LINKED_LIST_DisplayList()    Displaying list @ 0x00D32930
-src/linked_list.c:204:LINKED_LIST_DisplayList()      - Node = 0x00D32940 , data = 0x00408024
+src/linked_list.c:193:LINKED_LIST_DisplayList()    Displaying list @ 0x00782930
+src/linked_list.c:199:LINKED_LIST_DisplayList()      - Node = 0x00782940 , data = 0x00408024
+src/linked_list.c:204:LINKED_LIST_DisplayList()      - Node = 0x00782950 , data = 0x00408028
 src/linked_list.c:205:LINKED_LIST_DisplayList()    End of list
 
 Reversing the list
-src/linked_list.c:234:LINKED_LIST_ReverseList()    List @ 0x00D32930 reversed successfully
+src/linked_list.c:234:LINKED_LIST_ReverseList()    List @ 0x00782930 reversed successfully
 
 Displaying the list
-src/linked_list.c:193:LINKED_LIST_DisplayList()    Displaying list @ 0x00D32930
-src/linked_list.c:204:LINKED_LIST_DisplayList()      - Node = 0x00D32940 , data = 0x00408024
+src/linked_list.c:193:LINKED_LIST_DisplayList()    Displaying list @ 0x00782930
+src/linked_list.c:199:LINKED_LIST_DisplayList()      - Node = 0x00782950 , data = 0x00408028
+src/linked_list.c:204:LINKED_LIST_DisplayList()      - Node = 0x00782940 , data = 0x00408024
 src/linked_list.c:205:LINKED_LIST_DisplayList()    End of list
 
 Adding the variable 'z' to the list
-src/linked_list.c:315:linked_list_FindNode()    Searching the node whose data = 0x00408028 in list @ 0x00D32930
+src/linked_list.c:315:linked_list_FindNode()    Searching the node whose data = 0x0040802C in list @ 0x00782930
 src/linked_list.c:331:linked_list_FindNode()    Node not found
-src/linked_list.c:292:linked_list_CreateNode()    Allocating node, data = 0x00408028
-src/linked_list.c:306:linked_list_CreateNode()    Node allocated successfully @ 0x00D32950
+src/linked_list.c:292:linked_list_CreateNode()    Allocating node, data = 0x0040802C
+src/linked_list.c:306:linked_list_CreateNode()    Node allocated successfully @ 0x00782960
 src/linked_list.c:112:LINKED_LIST_AddNode()    Node added @ the end of the list
 
 Iterating the list
-Node = 0x00D32940, data = 0x00408024
-Node = 0x00D32950, data = 0x00408028
+Node = 0x00782950, data = 0x00408028
+Node = 0x00782940, data = 0x00408024
+Node = 0x00782960, data = 0x0040802C
 
 Deleting the node whose content is the variable 'x'
-src/linked_list.c:315:linked_list_FindNode()    Searching the node whose data = 0x00408024 in list @ 0x00D32930
-src/linked_list.c:323:linked_list_FindNode()    Node found @ 0x00D32940
-src/linked_list.c:282:FREE()    Freeing pointer @ 0x00D32940
-src/linked_list.c:154:LINKED_LIST_DeleteNode()    The node whose data = 0x00408024 was removed from list @ 0x00D32930
+src/linked_list.c:315:linked_list_FindNode()    Searching the node whose data = 0x00408024 in list @ 0x00782930
+src/linked_list.c:323:linked_list_FindNode()    Node found @ 0x00782940
+src/linked_list.c:282:FREE()    Freeing pointer @ 0x00782940
+src/linked_list.c:154:LINKED_LIST_DeleteNode()    The node whose data = 0x00408024 was removed from list @ 0x00782930
 
 Displaying the list
-src/linked_list.c:193:LINKED_LIST_DisplayList()    Displaying list @ 0x00D32930
-src/linked_list.c:204:LINKED_LIST_DisplayList()      - Node = 0x00D32950 , data = 0x00408028
+src/linked_list.c:193:LINKED_LIST_DisplayList()    Displaying list @ 0x00782930
+src/linked_list.c:199:LINKED_LIST_DisplayList()      - Node = 0x00782950 , data = 0x00408028
+src/linked_list.c:204:LINKED_LIST_DisplayList()      - Node = 0x00782960 , data = 0x0040802C
 src/linked_list.c:205:LINKED_LIST_DisplayList()    End of list
 
 Destroying the list before finishing the program
-src/linked_list.c:258:LINKED_LIST_DestroyList()    Freeing node @ 0x00D32950
-src/linked_list.c:282:FREE()    Freeing pointer @ 0x00D32950
-src/linked_list.c:266:LINKED_LIST_DestroyList()    Freeing list @ 0x00D32930
-src/linked_list.c:282:FREE()    Freeing pointer @ 0x00D32930
+src/linked_list.c:258:LINKED_LIST_DestroyList()    Freeing node @ 0x00782950
+src/linked_list.c:282:FREE()    Freeing pointer @ 0x00782950
+src/linked_list.c:258:LINKED_LIST_DestroyList()    Freeing node @ 0x00782960
+src/linked_list.c:282:FREE()    Freeing pointer @ 0x00782960
+src/linked_list.c:266:LINKED_LIST_DestroyList()    Freeing list @ 0x00782930
+src/linked_list.c:282:FREE()    Freeing pointer @ 0x00782930
 ```
 
 
